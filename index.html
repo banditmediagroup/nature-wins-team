@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nature Wins GLP-1 Comparison Chart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --blue: #2b7ea6;
+    --blue-hover: #256b8e;
+    --blue-deep: #1f5c79;
+    --sky: #77c2e1;
+    --charcoal: #363636;
+    --heading: #4e4e4e;
+    --meta: #828282;
+    --line: #e5e5e5;
+    --ground: #ffffff;
+    --ground-alt: #f3f3f3;
+    --card: #ffffff;
+    --body: #363636;
+    --on-dark: rgba(255,255,255,.9);
+    --panel: #363636;
+    --focus: #77c2e1;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--body);
+    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
+  .eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--blue); margin: 0 0 12px;
+  }
+  h1 {
+    font-size: 36px; line-height: 1.2; font-weight: 700; text-transform: uppercase;
+    color: var(--heading); margin: 0 0 16px; letter-spacing: .01em;
+  }
+  .lede { max-width: 680px; margin: 0 0 32px; font-size: 16px; line-height: 1.7; }
+
+  .table-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
+  }
+  .scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; min-width: 720px; }
+  caption { position: absolute; left: -9999px; }
+  th, td { padding: 18px 20px; text-align: center; vertical-align: middle; border-bottom: 1px solid var(--line); }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+  thead th { border-bottom: 1px solid var(--line); vertical-align: bottom; }
+  th.row-label {
+    text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--heading); width: 28%;
+  }
+  .row-label small {
+    display: block; margin-top: 4px; font-size: 12px; font-weight: 500; letter-spacing: .01em; line-height: 1.5;
+    text-transform: none; color: var(--body);
+  }
+  thead .col-label {
+    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--heading);
+    background: var(--ground-alt);
+  }
+  thead .col-label span {
+    display: block; margin-top: 4px; font-size: 11px; font-weight: 500; letter-spacing: .02em;
+    text-transform: none; color: var(--meta);
+  }
+  thead .col-ours { background: var(--charcoal); color: #fff; border-bottom-color: var(--charcoal); }
+  thead .col-ours span { color: var(--sky); }
+  .badge {
+    display: inline-block; margin-bottom: 8px; padding: 3px 10px; border-radius: 999px;
+    background: var(--sky); color: #363636; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  }
+  td.ours { border-left: 2px solid var(--blue); border-right: 2px solid var(--blue); font-weight: 600; }
+  tbody tr:last-child td.ours { border-bottom: 2px solid var(--blue); }
+  .yes { color: var(--blue); font-size: 22px; font-weight: 700; line-height: 1; }
+  .no { color: var(--meta); font-size: 20px; line-height: 1; }
+  .note { display: block; margin-top: 4px; font-size: 12px; font-weight: 500; color: var(--meta); }
+  .text-cell { font-size: 14px; font-weight: 500; }
+  td.ours.text-cell { font-weight: 700; color: var(--heading); }
+  .sr { position: absolute; left: -9999px; }
+
+  .callout {
+    margin-top: 32px; background: var(--panel); color: var(--on-dark); border-radius: 6px; padding: 32px;
+    display: grid; grid-template-columns: 1fr; gap: 12px;
+  }
+  .callout h2 {
+    margin: 0; font-size: 22px; line-height: 1.25; font-weight: 700; text-transform: uppercase; color: #fff; letter-spacing: .01em;
+  }
+  .callout p { margin: 0; max-width: 760px; }
+
+  .fine { margin-top: 32px; color: var(--meta); font-size: 12px; line-height: 1.7; }
+  .fine p { margin: 0 0 8px; }
+  .fine .fda { color: var(--body); font-weight: 500; }
+  .meta-line { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--meta); margin-top: 8px; }
+
+  a:focus-visible, .scroll:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; box-shadow: 0 0 0 5px rgba(119,194,225,.35); }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 48px 16px; }
+    h1 { font-size: 28px; }
+    th, td { padding: 14px 12px; }
+    .callout { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">Nature Wins·  Natural GLP-1 support</p>
+  <h1>How it stacks up.</h1>
+  <p class="lede">Pendulum uses probiotics. Supergut uses fiber. Nature Wins combines botanicals, amino acids and allulose in a single formula.</p>
+
+  <div class="table-card">
+    <div class="scroll" tabindex="0" role="region" aria-label="Product comparison table, scrolls horizontally on small screens">
+      <table>
+        <caption>Nature Wins GLP-1 compared with Pendulum GLP-1 Probiotic and Supergut GLP-1 Daily Support</caption>
+        <thead>
+          <tr>
+            <th class="row-label" scope="col"><span class="sr">Feature</span></th>
+            <th class="col-label col-ours" scope="col"><span class="badge" style="margin-top:0">Our formula</span><br>Nature Wins GLP-1<span>Formulated by Dr. Ardis</span></th>
+            <th class="col-label" scope="col">Pendulum<span>GLP-1 Probiotic</span></th>
+            <th class="col-label" scope="col">Supergut<span>GLP-1 Daily Support</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="row-label" scope="row">What’s inside<small>Per the product label</small></th>
+            <td class="ours text-cell">14 botanicals, amino acids and more</td>
+            <td class="text-cell">3 probiotic strains plus chicory inulin</td>
+            <td class="text-cell">4-fiber prebiotic blend</td>
+          </tr>
+          <tr>
+            <th class="row-label" scope="row">Organic-labeled botanicals<small>Guggul, amla, arjuna and more</small></th>
+            <td class="ours"><span class="yes" aria-label="Yes">✓</span><span class="note">9 listed</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+          </tr>
+          <tr>
+            <th class="row-label" scope="row">Berberine<small>Supports healthy blood sugar levels</small></th>
+            <td class="ours"><span class="yes" aria-label="Yes">✓</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+          </tr>
+          <tr>
+            <th class="row-label" scope="row">Allulose<small>Studied for supporting satiety hormone release, including GLP-1</small></th>
+            <td class="ours"><span class="yes" aria-label="Yes">✓</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+          </tr>
+          <tr>
+            <th class="row-label" scope="row">L-arginine and L-glutamine<small>Studied in humans for supporting GLP-1 release around meals</small></th>
+            <td class="ours"><span class="yes" aria-label="Yes">✓</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+          </tr>
+          <tr>
+            <th class="row-label" scope="row">Amla<small>Supports healthy blood sugar and cholesterol levels</small></th>
+            <td class="ours"><span class="yes" aria-label="Yes">✓</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+          </tr>
+          <tr>
+            <th class="row-label" scope="row">Gymnema<small>Traditionally used to support healthy blood sugar levels</small></th>
+            <td class="ours"><span class="yes" aria-label="Yes">✓</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+          </tr>
+          <tr>
+            <th class="row-label" scope="row">8 more plant actives<small>Guggul, arjuna, fenugreek, rutin, licorice, monk fruit, chlorophyllin, pink grapefruit oil</small></th>
+            <td class="ours"><span class="yes" aria-label="Yes">✓</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+            <td><span class="no" aria-label="No">✗</span></td>
+          </tr>
+          <tr>
+            <th class="row-label" scope="row">No prescription needed</th>
+            <td class="ours"><span class="yes" aria-label="Yes">✓</span></td>
+            <td><span class="yes" aria-label="Yes">✓</span></td>
+            <td><span class="yes" aria-label="Yes">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="callout" aria-labelledby="rx-heading">
+    <h2 id="rx-heading">Not a prescription drug. Not a replacement.</h2>
+    <p>Nature Wins GLP-1 is a dietary supplement. Prescription GLP-1 medicines such as Wegovy® and Ozempic® are FDA-approved drugs prescribed by a doctor, and they are a different category of product.</p>
+    <p>If you take a prescription medication, talk to your healthcare professional before adding any supplement.</p>
+  </section>
+
+  <div class="fine">
+    <p>Comparison based on publicly listed product labels and brand websites as of Nov 2026. Competitor formulas can change. Brand names are trademarks of their respective owners.</p>
+    <p class="fda">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p>
+    <p>For educational purposes only. Consult a healthcare professional before use, especially if you are pregnant, nursing, taking medication or have a medical condition.</p>
+    <p class="meta-line">Nature Wins·  Formulated by Dr. Ardis</p>
+  </div>
+</main>
+</body>
+</html>
